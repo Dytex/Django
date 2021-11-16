@@ -15,9 +15,12 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from rest_framework.urlpatterns import format_suffix_patterns
+from TankoPedia import views
 
 urlpatterns = [
     path("admin/", admin.site.urls),
     path('', include('TankoPedia.urls')),
+    #path("tanks/", views.tankList.as_view()),
     path("carts/", include("carts.urls"))
 ]
